@@ -1,7 +1,9 @@
-<div *ngIf="employee" class="card mt-3">
-  <div class="card-body">
-    <h5 class="card-title">{{ employee.firstname }} {{ employee.lastname }}</h5>
-    <p class="card-text">Correo: {{ employee.email }}</p>
-    <p class="card-text">Trabajo: {{ employee.job }}</p>
-  </div>
+<div class="modal-backdrop" (click)="close.emit()"></div>
+<div class="modal-content">
+  <button class="close-btn" (click)="closeModal()">×</button>
+  <h3>{{ employee.firstname }} {{ employee.lastname }}</h3>
+  <p><strong>Correo:</strong> {{ employee.email }}</p>
+  <p><strong>Teléfono:</strong> {{ employee.phone }}</p>
+  <p><strong>Dirección:</strong> {{ employee.address }}</p>
+  <p><strong>Trabajo:</strong> {{ employee.job }}</p>
 </div>

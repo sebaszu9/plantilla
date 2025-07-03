@@ -1,0 +1,11 @@
+body {
+  background: linear-gradient(to bottom right, #f3f8ff, #e9f1f9);
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

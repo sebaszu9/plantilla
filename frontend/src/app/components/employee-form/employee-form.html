@@ -23,5 +23,8 @@
     <label for="job" class="form-label">Trabajo</label>
     <input type="text" class="form-control" id="job" [(ngModel)]="job" name="job" required>
   </div>
-  <button type="submit" class="btn btn-success">Guardar</button>
+  <div class="d-flex justify-content-between mt-3">
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <button *ngIf="editing" type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+  </div>
 </form>

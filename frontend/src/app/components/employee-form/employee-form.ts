@@ -4,11 +4,12 @@ import { Employee } from '../../models/employee';
 import Swal from 'sweetalert2';
 
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-employee-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './employee-form.html',
   styleUrls: ['./employee-form.css']
 })
@@ -77,6 +78,11 @@ export class EmployeeFormComponent implements OnChanges {
         }
       });
     }
+  }
+
+  onCancel() {
+    this.resetForm();
+    this.employeeUpdated.emit();
   }
 
   resetForm() {

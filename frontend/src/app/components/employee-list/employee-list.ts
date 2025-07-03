@@ -37,7 +37,7 @@ export class EmployeeListComponent implements OnInit {
     this.loadEmployees();
   }
 
-  onEmployeeUpdated(emp: Employee) {
+  onEmployeeUpdated(emp?: Employee) {
     this.employeeToEdit = null;
     this.showForm = false;
     this.loadEmployees();
