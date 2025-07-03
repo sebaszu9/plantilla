@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2>Lista de Empleados</h2>
+  <button class="btn btn-primary mb-3" (click)="showForm = !showForm; employeeToEdit = null">Agregar Empleado</button>
+  <app-employee-form *ngIf="showForm"
+    [employeeToEdit]="employeeToEdit"
+    (employeeAdded)="onEmployeeAdded($event)"
+    (employeeUpdated)="onEmployeeUpdated($event)"></app-employee-form>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Trabajo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.firstname }} {{ emp.lastname }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.job }}</td>
+        <td>
+          <button class="btn btn-info btn-sm me-1" (click)="viewEmployee(emp)">Ver</button>
+          <button class="btn btn-warning btn-sm me-1" (click)="editEmployee(emp)">Editar</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteEmployee(emp)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+
+<app-employee-detail *ngIf="selectedEmployee" [employee]="selectedEmployee"></app-employee-detail>
+</div>
